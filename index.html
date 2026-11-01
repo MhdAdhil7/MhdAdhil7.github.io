@@ -1,10 +1,18 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Adhil | AI Engineer</title>
+
     <style>
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -13,41 +21,58 @@
         }
 
         header {
-            padding: 25px 8%;
+            padding: 22px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            border-bottom: 1px solid #1e293b;
         }
 
         header h2 {
             color: #38bdf8;
+            margin: 0;
         }
 
         nav a {
             color: white;
             text-decoration: none;
             margin-left: 20px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
         }
 
         main {
-            padding: 100px 8%;
-            max-width: 850px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .hero {
+            padding: 110px 8% 90px;
         }
 
         .tag {
             color: #38bdf8;
             letter-spacing: 2px;
+            font-size: 13px;
+            font-weight: bold;
         }
 
         h1 {
             font-size: 52px;
-            margin-bottom: 15px;
+            line-height: 1.15;
+            margin: 20px 0;
         }
 
-        main p {
+        .hero p {
             color: #cbd5e1;
             line-height: 1.8;
             font-size: 18px;
+            max-width: 700px;
         }
 
         .button {
@@ -58,6 +83,95 @@
             border-radius: 6px;
             text-decoration: none;
             margin-top: 15px;
+        }
+
+        .button:hover {
+            background: #0369a1;
+        }
+
+        section {
+            padding: 65px 8%;
+        }
+
+        section h2 {
+            font-size: 30px;
+            margin-bottom: 25px;
+        }
+
+        section p {
+            color: #cbd5e1;
+            line-height: 1.8;
+        }
+
+        .interests {
+            color: #38bdf8;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: #1e293b;
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid #334155;
+        }
+
+        .project-card h3 {
+            color: #38bdf8;
+            margin-top: 0;
+        }
+
+        .project-card .tech {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        .project-card a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+
+        .project-card a:hover {
+            text-decoration: underline;
+        }
+
+        #contact a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #94a3b8;
+            border-top: 1px solid #1e293b;
+            font-size: 14px;
+        }
+
+        @media (max-width: 650px) {
+            header {
+                flex-direction: column;
+            }
+
+            nav a {
+                margin: 0 8px;
+            }
+
+            h1 {
+                font-size: 38px;
+            }
+
+            .hero {
+                padding-top: 75px;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -75,68 +189,136 @@
     </header>
 
     <main>
-               <section id="about" style="padding: 50px 8%; max-width: 850px;">
+
+        <!-- HERO SECTION -->
+        <div class="hero">
+            <span class="tag">AI & SOFTWARE ENGINEERING</span>
+
+            <h1>Building Intelligent<br>Solutions with Code.</h1>
+
+            <p>
+                I'm Adhil, an Artificial Intelligence and Data Science
+                graduate based in Bahrain. I'm interested in building
+                practical AI applications, working with language models,
+                and solving real-world problems through software.
+            </p>
+
+            <a class="button"
+               href="https://github.com/MhdAdhil7">
+                Explore My GitHub
+            </a>
+        </div>
+
+        <!-- ABOUT SECTION -->
+        <section id="about">
             <h2>About Me</h2>
 
-            <p style="color: #cbd5e1; line-height: 1.8;">
+            <p>
                 I'm an AI and Data Science graduate focused on developing
                 practical AI applications. My interests include Large
                 Language Models, Retrieval-Augmented Generation, semantic
                 search, and intelligent software systems.
             </p>
 
-            <p style="color: #cbd5e1; line-height: 1.8;">
+            <p>
                 I enjoy taking ideas from concept to implementation using
                 Python and modern AI tools. I'm currently developing projects
                 that explore how AI can solve real-world problems.
             </p>
 
             <h3>Technical Interests</h3>
-            <p style="color: #38bdf8;">
+
+            <p class="interests">
                 Python · Machine Learning · LLMs · RAG · NLP · Streamlit
             </p>
         </section>
-        <section id="projects" style="padding: 50px 8%; max-width: 850px;">
-    <h2>Featured Projects</h2>
 
-    <div style="background: #1e293b; padding: 25px; border-radius: 10px; margin-top: 25px;">
-        <h3 style="color: #38bdf8;">NeuralMind AI</h3>
+        <!-- PROJECTS SECTION -->
+        <section id="projects">
+            <h2>Featured Projects</h2>
 
-        <p style="color: #cbd5e1; line-height: 1.8;">
-            An AI-powered research assistant that processes PDF documents,
-            extracts and chunks text, generates embeddings, and retrieves
-            relevant information to support question answering using
-            Retrieval-Augmented Generation (RAG).
-        </p>
+            <div class="project-grid">
 
-        <p style="color: #94a3b8;">
-            Python · Streamlit · PyMuPDF · Text Embeddings · RAG
-        </p>
+                <div class="project-card">
+                    <h3>NeuralMind AI</h3>
 
-        <a href="https://github.com/MhdAdhil7"
-           style="color: #38bdf8;">
-            View GitHub →
-        </a>
-    </div>
-</section>
-        <div style="background: #1e293b; padding: 25px; border-radius: 10px; margin-top: 20px;">
-    <h3 style="color: #38bdf8;">AI Shorts Generator</h3>
+                    <p>
+                        An AI-powered research assistant that processes PDF
+                        documents, extracts and chunks text, generates
+                        embeddings, and retrieves relevant information
+                        to support question answering using
+                        Retrieval-Augmented Generation (RAG).
+                    </p>
 
-    <p style="color: #cbd5e1; line-height: 1.8;">
-        A Python-based application that uses a locally running language
-        model through Ollama to generate short-form video titles, scripts,
-        SEO descriptions, and relevant hashtags.
-    </p>
+                    <p class="tech">
+                        Python · Streamlit · PyMuPDF · Text Embeddings · RAG
+                    </p>
 
-    <p style="color: #94a3b8;">
-        Python · Streamlit · Ollama · Llama 3 · Prompt Engineering
-    </p>
+                    <a href="https://github.com/MhdAdhil7">
+                        View GitHub →
+                    </a>
+                </div>
 
-    <a href="https://github.com/MhdAdhil7"
-       style="color: #38bdf8;">
-        View GitHub →
-    </a>
-</div>
-</main>
+                <div class="project-card">
+                    <h3>AI Shorts Generator</h3>
+
+                    <p>
+                        A Python-based application that uses a locally
+                        running language model through Ollama to generate
+                        short-form video titles, scripts, SEO descriptions,
+                        and relevant hashtags.
+                    </p>
+
+                    <p class="tech">
+                        Python · Streamlit · Ollama · Llama 3 · Prompt Engineering
+                    </p>
+
+                    <a href="https://github.com/MhdAdhil7">
+                        View GitHub →
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact">
+            <h2>Let's Connect</h2>
+
+            <p>
+                Interested in AI engineering opportunities, collaboration,
+                and building useful technology.
+            </p>
+
+            <p>
+                Email:
+                <a href="mailto:adhilfarooke6@gmail.com">
+                    adhilfarooke6@gmail.com
+                </a>
+            </p>
+
+            <p>
+                LinkedIn:
+                <a href="https://www.linkedin.com/in/mhd-adhil-farooke/"
+                   target="_blank">
+                    Connect on LinkedIn
+                </a>
+            </p>
+
+            <p>
+                GitHub:
+                <a href="https://github.com/MhdAdhil7"
+                   target="_blank">
+                    View My GitHub
+                </a>
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        © 2026 Adhil. Built with HTML and CSS.
+    </footer>
+
 </body>
 </html>
