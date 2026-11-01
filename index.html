@@ -297,6 +297,21 @@
     }
 
     /* PROJECTS */
+    
+.project-image {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  display: block;
+  margin: 20px 0;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  transition: transform .3s ease;
+}
+
+.project-image:hover {
+  transform: scale(1.02);
+}
 
     .projects {
       display: grid;
@@ -605,6 +620,12 @@
           <span class="project-index">01 / AI APPLICATION</span>
 
           <h3>NeuralMind AI</h3>
+          
+          <img
+            src="neuralmind-preview.png"
+            alt="NeuralMind AI research assistant interface"
+            class="project-image"
+          >
 
           <p>
             A PDF research assistant designed to extract document content,
