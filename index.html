@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#F5F2EA">
-  <meta name="description" content="Adhil Farooke — AI graduate building practical intelligent systems and applications.">
+  <meta name="description" content="Mohammed Adhil Farooke — AI graduate building practical intelligent systems and applications.">
   <title>Adhil Farooke | AI & Technology</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -78,9 +78,18 @@
       color: var(--gold);
     }
 
+    /* HERO SECTION */
+
     .hero {
-      padding: 115px 0 105px;
-      max-width: 850px;
+      padding: 105px 0 100px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.45fr) minmax(250px, .75fr);
+      align-items: center;
+      gap: 64px;
+    }
+
+    .hero-copy {
+      max-width: 690px;
     }
 
     .eyebrow {
@@ -99,7 +108,7 @@
     }
 
     h1 {
-      font-size: clamp(44px, 7vw, 76px);
+      font-size: clamp(44px, 6vw, 72px);
       letter-spacing: -1.5px;
       max-width: 800px;
     }
@@ -143,7 +152,92 @@
       font-size: 13px;
       border-bottom: 1px solid var(--gold);
       padding-bottom: 3px;
+      transition: color .25s ease;
     }
+
+    /* EDITORIAL IDENTITY PANEL */
+
+    .hero-profile {
+      position: relative;
+      min-height: 330px;
+      padding: 28px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      transition: transform .3s ease;
+    }
+
+    .hero-profile:hover {
+      transform: translateY(-4px);
+    }
+
+    .hero-profile::before,
+    .hero-profile::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(119, 124, 97, .22);
+      border-radius: 50%;
+      width: 245px;
+      height: 245px;
+      right: -72px;
+      top: 34px;
+    }
+
+    .hero-profile::after {
+      width: 185px;
+      height: 185px;
+      right: -42px;
+      top: 64px;
+      border-color: rgba(165, 138, 92, .3);
+    }
+
+    .profile-top,
+    .profile-bottom {
+      position: relative;
+      z-index: 1;
+    }
+
+    .profile-label {
+      color: var(--olive);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .profile-monogram {
+      position: absolute;
+      z-index: 1;
+      top: 78px;
+      left: 28px;
+      color: var(--ink);
+      font: 400 112px/.95 'Playfair Display', serif;
+      letter-spacing: -8px;
+    }
+
+    .profile-name {
+      max-width: 210px;
+      font: 500 20px/1.35 'Playfair Display', serif;
+    }
+
+    .profile-role {
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-top: 7px;
+    }
+
+    .profile-rule {
+      width: 38px;
+      height: 1px;
+      background: var(--gold);
+      margin-bottom: 14px;
+    }
+
+    /* GENERAL SECTIONS */
 
     section {
       padding: 75px 0;
@@ -168,6 +262,8 @@
       letter-spacing: 2px;
     }
 
+    /* ABOUT */
+
     .about-grid {
       display: grid;
       grid-template-columns: 1.3fr 1fr;
@@ -180,7 +276,9 @@
       max-width: 590px;
     }
 
-    .about-text p + p { margin-top: 17px; }
+    .about-text p + p {
+      margin-top: 17px;
+    }
 
     .focus-list {
       list-style: none;
@@ -197,6 +295,8 @@
       color: var(--gold);
       margin-right: 10px;
     }
+
+    /* PROJECTS */
 
     .projects {
       display: grid;
@@ -254,6 +354,8 @@
       padding-bottom: 4px;
     }
 
+    /* SKILLS */
+
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -274,6 +376,8 @@
       font-size: 13px;
       color: var(--muted);
     }
+
+    /* CONTACT */
 
     .contact-content {
       display: flex;
@@ -309,22 +413,62 @@
       flex-wrap: wrap;
     }
 
+    /* RESPONSIVE DESIGN */
+
     @media (max-width: 700px) {
-      .nav-links { gap: 14px; font-size: 11px; }
-      .hero { padding: 85px 0 75px; }
-      .about-grid, .projects, .skills-grid {
+      .nav-links {
+        gap: 14px;
+        font-size: 11px;
+      }
+
+      .hero {
+        padding: 78px 0 72px;
+        grid-template-columns: 1fr;
+        gap: 38px;
+      }
+
+      .hero-profile {
+        min-height: 260px;
+      }
+
+      .profile-monogram {
+        top: 58px;
+        font-size: 96px;
+      }
+
+      .about-grid,
+      .projects,
+      .skills-grid {
         grid-template-columns: 1fr;
         gap: 25px;
       }
-      section { padding: 55px 0; }
-      .section-heading h2 { font-size: 32px; }
-      .project-card p { min-height: auto; }
+
+      section {
+        padding: 55px 0;
+      }
+
+      .section-heading h2 {
+        font-size: 32px;
+      }
+
+      .project-card p {
+        min-height: auto;
+      }
     }
 
     @media (max-width: 420px) {
-      .logo { font-size: 23px; }
-      .nav-links { gap: 10px; font-size: 10px; }
-      .container { width: 90%; }
+      .logo {
+        font-size: 23px;
+      }
+
+      .nav-links {
+        gap: 10px;
+        font-size: 10px;
+      }
+
+      .container {
+        width: 90%;
+      }
     }
   </style>
 </head>
@@ -335,6 +479,7 @@
   <div class="container">
     <nav>
       <a href="#" class="logo">ADHIL.</a>
+
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#projects">Work</a>
@@ -345,41 +490,88 @@
 </header>
 
 <main>
+
+  <!-- HERO -->
+
   <div class="container">
     <div class="hero">
-      <p class="eyebrow">Artificial Intelligence · Engineering</p>
-      <h1>Thoughtful engineering.<br><em>Intelligent solutions.</em></h1>
-      <p class="hero-description">
-        I'm Adhil, an Artificial Intelligence and Data Science graduate
-        interested in building practical AI applications and intelligent systems.
-        I enjoy turning technical ideas into working products.
-      </p>
-      <div class="hero-actions">
-        <a href="#projects" class="button">EXPLORE MY WORK ↗</a>
-        <a href="https://github.com/MhdAdhil7" target="_blank" class="text-link">GitHub Profile ↗</a>
+
+      <div class="hero-copy">
+        <p class="eyebrow">Artificial Intelligence · Engineering</p>
+
+        <h1>
+          Engineering ideas into<br>
+          <em>intelligent systems.</em>
+        </h1>
+
+        <p class="hero-description">
+          I'm Mohammed Adhil Farooke, an Artificial Intelligence and Data Science
+          graduate based in Bahrain. I build practical AI applications and enjoy
+          turning technical ideas into useful, working products.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="button">EXPLORE MY WORK ↗</a>
+
+          <a href="https://github.com/MhdAdhil7"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="text-link">
+            GitHub Profile ↗
+          </a>
+        </div>
       </div>
+
+      <aside class="hero-profile" aria-label="Introduction">
+
+        <div class="profile-top">
+          <p class="profile-label">A personal portfolio</p>
+        </div>
+
+        <span class="profile-monogram" aria-hidden="true">AF.</span>
+
+        <div class="profile-bottom">
+          <div class="profile-rule"></div>
+
+          <p class="profile-name">
+            Mohammed Adhil Farooke
+          </p>
+
+          <p class="profile-role">
+            AI &amp; Technology · Bahrain
+          </p>
+        </div>
+
+      </aside>
+
     </div>
   </div>
 
+  <!-- ABOUT -->
+
   <section id="about">
     <div class="container">
+
       <div class="section-heading">
         <h2>A little about me.</h2>
         <span class="section-number">01 / ABOUT</span>
       </div>
 
       <div class="about-grid">
+
         <div class="about-text">
           <p>
             I am an Artificial Intelligence and Data Science graduate
             based in Bahrain, with practical exposure to Python,
             machine learning fundamentals and AI application development.
           </p>
+
           <p>
             My interests include large language models, retrieval-based
             AI systems and building useful applications with modern
             development tools.
           </p>
+
           <p>
             I am focused on growing as an AI engineer through continuous
             learning, experimentation and hands-on projects.
@@ -387,17 +579,21 @@
         </div>
 
         <ul class="focus-list">
-          <li><span>01</span> AI & Machine Learning</li>
+          <li><span>01</span> AI &amp; Machine Learning</li>
           <li><span>02</span> Large Language Models</li>
           <li><span>03</span> Retrieval-Augmented Generation</li>
           <li><span>04</span> Python Application Development</li>
         </ul>
+
       </div>
     </div>
   </section>
 
+  <!-- PROJECTS -->
+
   <section id="projects">
     <div class="container">
+
       <div class="section-heading">
         <h2>Selected work.</h2>
         <span class="section-number">02 / PROJECTS</span>
@@ -407,39 +603,51 @@
 
         <article class="project-card">
           <span class="project-index">01 / AI APPLICATION</span>
+
           <h3>NeuralMind AI</h3>
+
           <p>
             A PDF research assistant designed to extract document content,
             retrieve relevant information and support question answering
             through a retrieval-based workflow.
           </p>
+
           <div class="tags">
             <span>Python</span>
             <span>Streamlit</span>
             <span>PyMuPDF</span>
             <span>RAG</span>
           </div>
+
           <a href="https://github.com/MhdAdhil7/NeuralMind-AI"
-             target="_blank" rel="noopener noreferrer" class="project-link">
+             target="_blank"
+             rel="noopener noreferrer"
+             class="project-link">
             VIEW PROJECT ↗
           </a>
         </article>
 
         <article class="project-card">
           <span class="project-index">02 / GENERATIVE AI</span>
+
           <h3>AI Shorts Generator</h3>
+
           <p>
             A local AI-powered content generation application that creates
             short-video scripts, titles, descriptions and hashtags.
           </p>
+
           <div class="tags">
             <span>Python</span>
             <span>Streamlit</span>
             <span>Ollama</span>
             <span>LLM</span>
           </div>
+
           <a href="https://github.com/MhdAdhil7/AI-short-video-creator"
-             target="_blank" rel="noopener noreferrer" class="project-link">
+             target="_blank"
+             rel="noopener noreferrer"
+             class="project-link">
             VIEW PROJECT ↗
           </a>
         </article>
@@ -448,51 +656,79 @@
     </div>
   </section>
 
+  <!-- SKILLS -->
+
   <section id="skills">
     <div class="container">
+
       <div class="section-heading">
         <h2>Technical toolkit.</h2>
         <span class="section-number">03 / EXPERTISE</span>
       </div>
 
       <div class="skills-grid">
+
         <div class="skill-group">
           <h3>Programming</h3>
           <p>Python, C++, Git, GitHub, Linux</p>
         </div>
+
         <div class="skill-group">
-          <h3>AI & Machine Learning</h3>
+          <h3>AI &amp; Machine Learning</h3>
           <p>ML Fundamentals, NLP Fundamentals, Model Evaluation, LLM Concepts</p>
         </div>
+
         <div class="skill-group">
           <h3>AI Development</h3>
           <p>Streamlit, Ollama, PyMuPDF, Text Embeddings, Semantic Search, RAG</p>
         </div>
+
       </div>
     </div>
   </section>
 
+  <!-- CONTACT -->
+
   <section id="contact">
     <div class="container">
+
       <div class="contact-content">
+
         <div>
           <p class="eyebrow">04 / CONTACT</p>
           <h2>Let's build something meaningful.</h2>
         </div>
 
         <div class="contact-links">
-          <a class="text-link" href="mailto:adhilfarooke6@gmail.com">Email ↗</a>
-          <a class="text-link" href="https://www.linkedin.com/in/mhd-adhil-farooke/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-          <a class="text-link" href="https://github.com/MhdAdhil7" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          <a class="text-link"
+             href="mailto:adhilfarooke6@gmail.com">
+            Email ↗
+          </a>
+
+          <a class="text-link"
+             href="https://www.linkedin.com/in/mhd-adhil-farooke/"
+             target="_blank"
+             rel="noopener noreferrer">
+            LinkedIn ↗
+          </a>
+
+          <a class="text-link"
+             href="https://github.com/MhdAdhil7"
+             target="_blank"
+             rel="noopener noreferrer">
+            GitHub ↗
+          </a>
         </div>
+
       </div>
     </div>
   </section>
+
 </main>
 
 <footer>
   <div class="container footer-content">
-    <span>© 2026 Adhil Farooke</span>
+    <span>© 2026 Mohammed Adhil Farooke</span>
     <span>Designed with intention. Built with code.</span>
     <span>Manama, Bahrain</span>
   </div>
